@@ -1,1 +1,1 @@
-web: gunicorn alic_project.wsgi
+web: gunicorn notes_app.wsgi
