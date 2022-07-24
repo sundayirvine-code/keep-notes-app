@@ -1,0 +1,1 @@
+web: gunicorn alic_project.wsgi

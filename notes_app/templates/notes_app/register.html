@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="{% static 'notes_app/style.css' %}" rel="stylesheet">
+   <!-- <script src="{% static 'alic/index.js' %}"></script>-->
+    <title> Keep Notes Register</title>
+</head>
+<body>
+    <section>
+        <div class="form-container">
+            {% if message %}
+                <div>{{ message }}</div>
+            {% endif %}
+            <h1>Register Form</h1>
+            <form action="{% url 'register' %}" method="post">
+                {% csrf_token %}
+                <div class="control">
+                    <label for="name">Name</label>
+                    <input required autocomplete="off"  type="text" name="username" id="name">
+                </div>
+                <div class="control">
+                    <label for="email">Email</label>
+                    <input required autocomplete="off"  type="email" name="email" id="email">
+                </div>
+                <div class="control">
+                    <label for="psw">Password</label>
+                    <input required  type="password" name="password" id="psw">
+                </div>
+                <div class="control">
+                    <label for="confirm">Confirm Password</label>
+                    <input required type="password" name="confirmation" id="confirm">
+                </div>
+                <br/>
+                <div class="control">
+                    <input id="register" type="submit" value="Register">
+                </div>
+                <div class="link">
+                    <small>Alredy have an account?<a href="{% url 'login' %}" > Sign in</a></small>
+                    <br>
+                    <small>Go back<a href="{% url 'index' %}" > Home</a></small>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+</body>
+</html>

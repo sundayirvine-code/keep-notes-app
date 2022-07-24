@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="{% static 'notes_app/style.css' %}" rel="stylesheet">
+    <!--<script src="{% static 'alic/index.js' %}"></script>-->
+    <title>Keep Notes Login</title>
+</head>
+<body>
+    <section>
+        <div class="form-container">
+            {% if message %}
+                <div>{{ message }}</div>
+            {% endif %}
+            <h1>Login Form</h1>
+            <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                <div class="control">
+                    <label for="name">Name</label>
+                    <input required autocomplete="off" type="text" name="username" id="name">
+                </div>
+                <div class="control">
+                    <label for="psw">Password</label>
+                    <input required type="password" name="pasw" id="psw">
+                </div>
+                <br/>
+                <div class="control">
+                    <input id="login" type="submit" value="Login">
+                </div>
+                <div class="link">
+                    <small>Dont have an account?<a href="{% url 'register' %}" > Signup</a></small>
+                    <br>
+                    <small>Go back<a href="{% url 'index' %}" > Home</a></small>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+</body>
+</html>
