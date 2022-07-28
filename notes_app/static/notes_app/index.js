@@ -145,9 +145,24 @@ function shrink(){
   // create pre element
   var pre = document.createElement("pre");
   pre.className="n_content";
-  // capture the first  180 sub strings and text wrap at character 82
-  var first = cont.substring(0,600);
-  first = textFold(first, 82);
+
+  let new_line_count=0
+  let conte=''
+  for (let n of cont){
+    if (new_line_count == 10){
+      break
+    }
+          
+    else{
+      if (n == '\n'){
+        new_line_count += 1
+      }             
+        conte += n
+    }
+          
+  }
+  
+  let first = textFold(conte, 105);
   pre.innerHTML = first + `...`;
   text2.append(pre);
   
@@ -401,11 +416,26 @@ function note_builder(notes_object, key,arc = false, del = false, new_note = nul
   //extract the content
   var note_content = notes_object[key]['content'];
   // capture the first  180 sub strings and text wrap at character 82
-  var first = note_content.substring(0,600);
-  first = textFold(first, 82);
+  //var first = note_content.substring(0,600);
+  
   //first = first.replace(/(.{82})/g, "$1<br>");
 
-
+  let new_line_count=0
+  let conte=''
+  for (let n of note_content){
+    if (new_line_count == 10){
+      break
+    }
+          
+    else{
+      if (n == '\n'){
+        new_line_count += 1
+      }             
+        conte += n
+    }
+          
+  }
+  let first = textFold(conte, 105);
   //holds the content
   var notecontent = document.createElement('div');
   notecontent.className = 'note_content';

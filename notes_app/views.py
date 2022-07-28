@@ -74,9 +74,21 @@ def index(request):
         labelss = note.notes_with_label.all()
         for label in labelss.iterator():
             LABELS.append(label.name.upper())
+
+        #load only 14 lines of a note
+        new_line_count=0
+        cont=''
+        for n in note.content:
+            if new_line_count == 10:
+                break
+            else:
+                if n == '\n':
+                    new_line_count += 1
+                cont += n
+
         NOTES[note.id] = {
             "title": note.title,
-            "content": note.content,
+            "content": cont,
             "date_created": note.date_created,
             "LABELS":LABELS
         }

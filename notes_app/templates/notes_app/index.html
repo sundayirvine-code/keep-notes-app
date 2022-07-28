@@ -79,7 +79,7 @@
                     <h1>{{ values.title}}</h1>
                 </div>
                 <div class="note_content">
-                    <pre class="n_content">{{ values.content | slice:":600"|wordwrap:85 }}...</pre>
+                    <pre class="n_content">{{ values.content|wordwrap:78|linebreaks }}...</pre>
                 </div>
                 <div class="meta_info">
                     {% if values.LABELS %}
