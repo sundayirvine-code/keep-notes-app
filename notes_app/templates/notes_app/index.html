@@ -69,7 +69,7 @@
     <div id="notes_bar">
 
             <div id="create_note">
-                    <input type="text" name="title" id="create_note_title" placeholder="TITLE" maxlength="20">
+                    <input type="text" name="title" id="create_note_title" placeholder="TITLE" maxlength="250">
                     <textarea maxlength="2000" name="CONTENT" id="create_note_content" placeholder="NOTE..."></textarea>  
                     <button type="submit" id="save_note">SAVE</button>
             </div>
@@ -79,7 +79,7 @@
                     <h1>{{ values.title}}</h1>
                 </div>
                 <div class="note_content">
-                    <pre class="n_content">{{ values.content|wordwrap:78|linebreaks }}...</pre>
+                    <pre class="n_content">{{ values.content|wordwrap:85}}...</pre>
                 </div>
                 <div class="meta_info">
                     {% if values.LABELS %}

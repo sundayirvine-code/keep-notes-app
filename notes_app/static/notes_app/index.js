@@ -162,7 +162,7 @@ function shrink(){
           
   }
   
-  let first = textFold(conte, 105);
+  let first = textFold(conte, 85);
   pre.innerHTML = first + `...`;
   text2.append(pre);
   
@@ -435,7 +435,7 @@ function note_builder(notes_object, key,arc = false, del = false, new_note = nul
     }
           
   }
-  let first = textFold(conte, 105);
+  let first = textFold(conte, 85);
   //holds the content
   var notecontent = document.createElement('div');
   notecontent.className = 'note_content';
@@ -648,7 +648,7 @@ function label_icons_edit(label_edit_icon){
   save_edited_label_button.onclick = function(e){
     e.stopPropagation();
   let edited_label_name = input_element.value.trim()
-  if(edited_label_name == "" || edited_label_name.length > 20){
+  if(edited_label_name == "" || edited_label_name.length > 250){
     input_element.style.border="1px solid red"
     return
   }
@@ -910,7 +910,7 @@ document.addEventListener("DOMContentLoaded", function(){
       //1. remove whitespace from title
       note_title = note_title.trim();
       //2. empty values
-      if(note_title == '' || note_title.length > 20 ){
+      if(note_title == '' || note_title.length > 250 ){
         //red around title   
         var t = document.querySelector('#create_note_title');
         t.style.border="1px solid red";

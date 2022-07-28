@@ -105,20 +105,22 @@ html, body{
     margin-bottom: 20px;
     border-radius: 5px; 
     border:1px solid rgba(255, 255, 255, 0.4) ;  
-    width:800px;
+    text-align: justify;
+    
     position: relative;
-    overflow-x: hidden;
 
 }
-
+#create_note{
+    width: 45vw;
+}
 .note{
-    height: 400px; /* of the notes_bar height*/
-    
+    height: 75%; /* of the notes_bar height*/
+    width:60vw;
 }
 #big_note{
-    width:1000px;
+    width:65vw;
     z-index: 100;
-    height: 400px;
+    height: 80%;
     margin-left: auto; 
     margin-right: auto;
     border-radius: 5px; 
