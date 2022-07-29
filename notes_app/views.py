@@ -319,19 +319,20 @@ def create_label(request, label_created):
     # This process must be via POST
     if request.method != "POST":
         return JsonResponse({"error": "POST request required."}, status=400)
+    label_created = label_created.strip().upper()
     try:
-        if label_created:
-            label = Labels(name=label_created, author=request.user)
-            label.save()
-        LABEL = Labels.objects.get(name=label_created)
-    except IntegrityError:
+        Labels.objects.get(name=label_created, author=request.user)
+        print('we have a match')
         return JsonResponse({"error": "Your Label must be unique"}, status = 400)
-    return JsonResponse(
-    {
-    "label_name": LABEL.name.upper(),
-    "label_id": LABEL.id
-    
-    }, status=201)
+    except Labels.DoesNotExist:
+        print('No match create a')
+        LABEL = Labels.objects.create(name=label_created, author=request.user)
+        return JsonResponse(
+        {
+        "label_name": LABEL.name.upper(),
+        "label_id": LABEL.id
+        
+        }, status=201)
 
 
 #function that edits a particular label

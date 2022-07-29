@@ -792,6 +792,9 @@ document.addEventListener("DOMContentLoaded", function(){
       //capture the result from the server and convert it to a JSON format
       .then(response => response.json())
       .then(result => { 
+        //console.log(result)
+        if(result.error == false){
+        
         //COLLECT DATA FROM DATABASE
         var label_id = result['label_id'];
         var label = result["label_name"];
@@ -852,7 +855,12 @@ document.addEventListener("DOMContentLoaded", function(){
       }
       click_delete_icon()
       click_edit_icon()
-
+    }
+    else{
+      click_delete_icon()
+      click_edit_icon()
+      alert('Labels must be unique')
+    }
       });
       }
     }
