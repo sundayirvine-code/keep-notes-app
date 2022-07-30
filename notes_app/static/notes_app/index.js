@@ -192,6 +192,7 @@ function save(note_id=null,note_title,content_){
   .then(result => { 
     //WHEN A NEW NOTE IS CREATED:
     if(result['message'] == 'New note created.'){
+      document.querySelector('#create_note_title').border="none"
       //clear the title and textarea
       document.querySelector("#create_note_content").value = '';
       document.querySelector('#create_note_title').value = "";

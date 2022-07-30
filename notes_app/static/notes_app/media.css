@@ -1,0 +1,134 @@
+/**  MEDIA QUERIES  **/
+
+/*
+
+@media (max-width: 375px) {
+
+}
+
+@media (max-width: 320px) {
+
+}
+
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media(max-width: 1400px) {
+  #create_note{
+    width:850px;
+    max-width: 850px;
+    height:155px;
+    max-height: 155px;
+}
+.note{
+    max-height: 450px;
+    height: 450px; /* of the notes_bar height*/
+    width:900px;
+    max-width: 900px;
+}
+.n_content{
+  padding: 20px 20px 20px 20px;
+  font-size: 1.2vw;
+  
+}
+.meta_info{
+  height: 15%;
+  padding: 10px; 
+
+}
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width:1200px) {
+  #create_note{
+    width:650px;
+    max-width: 650px;
+    height:155px;
+    max-height: 155px;
+}
+.note{
+    max-height: 450px;
+    height: 450px; /* of the notes_bar height*/
+    width:750px;
+    max-width: 750px;
+}
+.n_content{
+  padding: 20px 20px 20px 20px;
+  font-size: 1.2vw;
+  
+}
+.meta_info{
+  height: 15%;
+  padding: 10px; 
+
+}
+}
+@media  (max-width: 950px) {
+  #create_note{
+    width: 500px;
+    max-width: 550px;
+    height:155px;
+    max-height: 155px;
+}
+.note{
+    max-height: 400px;
+    height: 400px; /* of the notes_bar height*/
+    width:600px;
+    max-width: 600px;
+}
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 860px) {
+  #labels_bar{
+    display: none;
+  }
+  #notes_bar{
+    width: 100%;
+  }
+  #create_note{
+    width: 500px;
+    max-width: 500px;
+    height:155px;
+    max-height: 155px;
+}
+.note{
+    max-height: 300px;
+    height: 300px; /* of the notes_bar height*/
+    width:600px;
+    max-width: 600px;
+}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 670px) {
+  #create_note{
+    width: 400px;
+    max-width: 400px;
+    height:155px;
+    max-height: 155px;
+}
+.note{
+    max-height: 300px;
+    height: 300px; /* of the notes_bar height*/
+    width:450px;
+    max-width: 450px;
+}
+
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 550px) {
+  #create_note{
+    width: 400px;
+    max-width: 400px;
+    height:155px;
+    max-height: 155px;
+}
+.note{
+    max-height: 300px;
+    height: 300px; /* of the notes_bar height*/
+    width:450px;
+    max-width: 450px;
+}
+}
