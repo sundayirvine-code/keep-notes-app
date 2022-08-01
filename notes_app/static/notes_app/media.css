@@ -1,13 +1,41 @@
 /**  MEDIA QUERIES  **/
 
-/*
-
-@media (max-width: 375px) {
+@media (max-width: 2000px) {
+  #create_note{
+    width:700px;
+    max-width: 700px;
+    height:155px;
+    max-height: 155px;
+}
+.note{
+    max-height: 600px;
+    height: 600px; 
+    width:1100px;
+    max-width: 1100px;
+}
+.n_content{
+  padding-left:10px;  
+}
 
 }
 
-@media (max-width: 320px) {
-
+@media (max-width: 1650px) {
+    #create_note{
+    width:700px;
+    max-width: 700px;
+    height:155px;
+    max-height: 155px;
+}
+.note{
+    max-height: 500px;
+    height: 500px; 
+    width:1000px;
+    max-width: 1000px;
+}
+.n_content{
+  padding:10px;  
+  width: 90%;
+}
 }
 
 
@@ -15,19 +43,19 @@
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media(max-width: 1400px) {
   #create_note{
-    width:850px;
-    max-width: 850px;
+    width:650px;
+    max-width: 650px;
     height:155px;
     max-height: 155px;
 }
 .note{
     max-height: 450px;
     height: 450px; /* of the notes_bar height*/
-    width:900px;
-    max-width: 900px;
+    width:830px;
+    max-width: 830px;
 }
 .n_content{
-  padding: 20px 20px 20px 20px;
+  padding-left:10px;
   font-size: 1.2vw;
   
 }
@@ -52,7 +80,7 @@
     max-width: 750px;
 }
 .n_content{
-  padding: 20px 20px 20px 20px;
+  padding-left: 10px;
   font-size: 1.2vw;
   
 }
@@ -62,30 +90,7 @@
 
 }
 }
-@media  (max-width: 950px) {
-  #create_note{
-    width: 500px;
-    max-width: 550px;
-    height:155px;
-    max-height: 155px;
-}
-.note{
-    max-height: 400px;
-    height: 400px; /* of the notes_bar height*/
-    width:600px;
-    max-width: 600px;
-}
-}
-
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (max-width: 860px) {
-  #labels_bar{
-    display: none;
-  }
-  #notes_bar{
-    width: 100%;
-  }
+@media  (max-width: 1100px) {
   #create_note{
     width: 500px;
     max-width: 500px;
@@ -93,10 +98,33 @@
     max-height: 155px;
 }
 .note{
-    max-height: 300px;
-    height: 300px; /* of the notes_bar height*/
-    width:600px;
-    max-width: 600px;
+    max-height: 400px;
+    height: 400px; /* of the notes_bar height*/
+    width:650px;
+    max-width: 650px;
+}
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 880px) {
+  #labels_bar{
+    display: none;
+  }
+  #notes_bar{
+    width: 100%;
+  }
+  #create_note{
+    width: 450px;
+    max-width: 450px;
+    height:155px;
+    max-height: 155px;
+}
+.note{
+    max-height: 350px;
+    height: 350px; /* of the notes_bar height*/
+    width:550px;
+    max-width: 550px;
 }
 }
 
@@ -120,15 +148,37 @@
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 550px) {
   #create_note{
-    width: 400px;
-    max-width: 400px;
-    height:155px;
-    max-height: 155px;
+    width: 250px;
+    max-width: 250px;
+    height:120px;
+    max-height: 120px;
 }
 .note{
     max-height: 300px;
-    height: 300px; /* of the notes_bar height*/
-    width:450px;
-    max-width: 450px;
+    height: 250px; /* of the notes_bar height*/
+    width:350px;
+    max-width: 350px;
+}
+.n_content{
+  padding-left: 10px; 
+  width: fit-content;
+}
+}
+
+@media only screen and (max-width: 425px) {
+  #create_note{
+    width: 250px;
+    max-width: 250px;
+    height:150px;
+    max-height: 150px;
+}
+.note{
+    max-height: 200px;
+    height: 200px; /* of the notes_bar height*/
+    width:300px;
+    max-width: 300px;
+}
+.n_content{
+  padding-left: 10px; 
 }
 }
