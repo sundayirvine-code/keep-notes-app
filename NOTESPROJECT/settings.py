@@ -50,7 +50,18 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_auto_logout.middleware.auto_logout',
 ]
+#AUTO_LOGOUT = {'IDLE_TIME': 600}  # logout after 10 minutes of downtime
+from datetime import timedelta
+
+AUTO_LOGOUT = {
+    'IDLE_TIME': timedelta(minutes=60),
+    'SESSION_TIME': timedelta(hours=24),
+    'REDIRECT_TO_LOGIN_IMMEDIATELY': True,
+    'MESSAGE': 'The session has expired. Please login again to continue.',
+}
+
 
 ROOT_URLCONF = 'NOTESPROJECT.urls'
 
@@ -65,6 +76,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # ↓↓↓ Add this ↓↓↓ FOR OUTO LOG OUT FUNCTIONALITY
+                'django_auto_logout.context_processors.auto_logout_client',
             ],
         },
     },
