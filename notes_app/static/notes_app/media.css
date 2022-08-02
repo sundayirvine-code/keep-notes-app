@@ -4,8 +4,6 @@
   #create_note{
     width:700px;
     max-width: 700px;
-    height:155px;
-    max-height: 155px;
 }
 .note{
     max-height: 600px;
@@ -23,8 +21,6 @@
     #create_note{
     width:700px;
     max-width: 700px;
-    height:155px;
-    max-height: 155px;
 }
 .note{
     max-height: 500px;
@@ -45,8 +41,6 @@
   #create_note{
     width:650px;
     max-width: 650px;
-    height:155px;
-    max-height: 155px;
 }
 .note{
     max-height: 450px;
@@ -70,8 +64,6 @@
   #create_note{
     width:650px;
     max-width: 650px;
-    height:155px;
-    max-height: 155px;
 }
 .note{
     max-height: 450px;
@@ -94,8 +86,6 @@
   #create_note{
     width: 500px;
     max-width: 500px;
-    height:155px;
-    max-height: 155px;
 }
 .note{
     max-height: 400px;
@@ -117,8 +107,6 @@
   #create_note{
     width: 450px;
     max-width: 450px;
-    height:155px;
-    max-height: 155px;
 }
 .note{
     max-height: 350px;
@@ -133,8 +121,6 @@
   #create_note{
     width: 400px;
     max-width: 400px;
-    height:155px;
-    max-height: 155px;
 }
 .note{
     max-height: 300px;
@@ -150,8 +136,6 @@
   #create_note{
     width: 250px;
     max-width: 250px;
-    height:120px;
-    max-height: 120px;
 }
 .note{
     max-height: 300px;
@@ -169,8 +153,6 @@
   #create_note{
     width: 250px;
     max-width: 250px;
-    height:150px;
-    max-height: 150px;
 }
 .note{
     max-height: 200px;

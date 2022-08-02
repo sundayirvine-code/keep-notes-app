@@ -113,8 +113,6 @@ html, body{
 #create_note{
     width: 800px;
     max-width: 800px;
-    height:155px;
-    max-height: 155px;
 }
 .note{
     max-height: 450px;
@@ -203,7 +201,7 @@ html, body{
 }
 
 .meta_right{
-    width: 30%;
+    width: 50%;
     height: 100%;
     float: right;
 
@@ -214,7 +212,7 @@ html, body{
 }
 
 .meta_left{
-    width: 68%;
+    width: 50%;
     height: 100%;
     float: left;
 }
