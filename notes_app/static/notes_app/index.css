@@ -58,8 +58,6 @@ html, body{
     border-radius: 35px;
     transition: width 0.5s;
     margin-left: 20.9%;
-    
-
 }
 
 .search::placeholder{
@@ -343,6 +341,11 @@ html, body{
     
 }
 
-
+#paste_labels{
+    position: absolute;
+    bottom: 100px;
+    right: 150px;
+    background-color: #16161A;
+}
 
 

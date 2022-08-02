@@ -15,5 +15,7 @@ urlpatterns = [
     path('all_deleted', views.all_deleted, name  = 'all_deleted'),
     path("accounts/login/", views.login_view, name="login"),
     path("logout", views.logout_view, name="logout"),
-    path("register", views.register, name="register")
+    path("register", views.register, name="register"),
+    path("all_labels", views.all_labels, name="all_labels"),
+    path("attach_label/<str:label>", views.attach_label, name="attach_label")
 ]

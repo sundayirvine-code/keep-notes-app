@@ -79,7 +79,7 @@ def index(request):
         new_line_count=0
         cont=''
         for n in note.content:
-            if new_line_count == 10:
+            if new_line_count == 6:
                 break
             else:
                 if n == '\n':
@@ -184,7 +184,8 @@ def save(request):
     content = data.get("content")
     title = data.get("title").strip()
     note_id = data.get("id")
-
+    
+    
     #get to that particular note and update
     
     try:
@@ -197,6 +198,7 @@ def save(request):
         labels = note.notes_with_label.all()
         for label in labels.iterator():
             LABELS.append(label.name.upper())
+        print(1)
         return JsonResponse({"message": "Save Process Successful.",
         "title": note.title,
         "content": note.content,
@@ -204,8 +206,22 @@ def save(request):
         "labels": LABELS
         }, status=201)
     except ObjectDoesNotExist:
+        #put a new line at 116 characters
+        content_116 = ''
+        val_count =0
+        for val in content:
+            
+            if val_count == 100:
+                #append \n and continue
+                content_116 += '\n'
+                #reset val_count
+                val_count = 0
+            #append each character
+            content_116 += val
+            #increment val_count
+            val_count += 1
         #Save the note
-        Notes(title=title, content=content, author=request.user).save()
+        Notes(title=title, content=content_116, author=request.user).save()
         NOTES = {}
         notes = Notes.objects.filter(title=title, content=content)
         for note in notes.iterator():
@@ -219,6 +235,7 @@ def save(request):
                 "date_created": note.date_created,
                 "labels": LABELS
             }
+        print(2)
         return JsonResponse({"message": "New note created.",
         "notes": NOTES
         }, status=201)
@@ -328,7 +345,7 @@ def create_label(request, label_created):
         print('No match create a')
         LABEL = Labels.objects.create(name=label_created, author=request.user)
         return JsonResponse(
-        {
+        {"error": "Label is unique",
         "label_name": LABEL.name.upper(),
         "label_id": LABEL.id
         
@@ -371,4 +388,35 @@ def delete_label(request, label_name, label_id):
         }, status=201)
     except Labels.DoesNotExist:
         pass
-    
+
+#function that brings all the label names created by the current user    
+def all_labels(request):
+    labels = Labels.objects.filter(author=request.user)
+    l=[]
+    for label in labels.iterator():
+        l.append(label.name)
+
+    return JsonResponse(
+        {
+        'labels': l
+        }, status=201)
+
+#a function that attaches a label to a note
+def attach_label(request, label):
+    #associate a note with a label
+    # This process must be via POST
+    if request.method != "POST":
+        return JsonResponse({"error": "POST request required."}, status=400)
+    #data collection
+    data = json.loads(request.body)
+    note_id = data.get('note_id')
+    #get the note
+    note = Notes.objects.get(pk=note_id)
+    #get the label
+    l = Labels.objects.get(name__iexact = label, author=request.user)
+    l.notes.add(note)
+    note.labels.add(l)
+    return JsonResponse(
+        {
+        'labels': l.name
+        }, status=201)
