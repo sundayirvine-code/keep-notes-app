@@ -11,8 +11,11 @@ html, body{
     flex-direction: row;
     background-color: #16161A;
     color: #FFFFFE;
+    font-family: Verdana, sans-serif;
 }
-
+h1 {
+    font-family: Georgia, serif;
+  }
 #header{
     width: 100%;
     height: fit-content;
@@ -232,7 +235,10 @@ html, body{
     display: inline-block;
 }
 
-
+.meta_right span{
+    float: right;
+}
+.meta_left span{float: left;}
 /* LABESL SECTION*/
 .label_icons, .l_name,#delete_link, #archive_link, #settings_link{
     font-size: 0.99vw;

@@ -93,6 +93,21 @@
     width:650px;
     max-width: 650px;
 }
+.note_content textarea {
+  padding-left: 15px;
+  font-size: 14px;
+}
+.note_title input {
+  font-size: 19px;
+  font-weight: bold;
+}
+#close{
+  width: 30%;
+}
+.n_content{
+  padding-left: 10px; 
+  font-size: 1.25vw;
+}
 }
 
 
@@ -114,6 +129,31 @@
     width:550px;
     max-width: 550px;
 }
+.n_content{
+  padding-left: 10px; 
+  font-size: 1.25vw;
+}
+.search{
+  border: 1px solid #FFFFFE;
+}
+.note_title h1 {
+  font-size: 2.5vw;
+}
+
+#big_note {
+  width: 95vw;
+}
+.note_content textarea {
+  padding-left: 15px;
+  font-size: 14px;
+}
+.note_title input {
+  font-size: 19px;
+  font-weight: bold;
+}
+#close{
+  width: 30%;
+}
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -127,6 +167,23 @@
     height: 300px; /* of the notes_bar height*/
     width:450px;
     max-width: 450px;
+}
+.note_title h1 {
+  font-size: 2.5vw;
+}
+#big_note {
+  width: 95vw;
+}
+.note_content textarea {
+  padding-left: 15px;
+  font-size: 14px;
+}
+.note_title input {
+  font-size: 19px;
+  font-weight: bold;
+}
+#close{
+  width: 30%;
 }
 
 }
@@ -145,11 +202,34 @@
 }
 .n_content{
   padding-left: 10px; 
-  width: fit-content;
+  font-size: 1.2vw;
+}
+.search{
+  border: 1px solid #FFFFFE;
+}
+.note_title h1 {
+  font-size: 2.5vw;
+}
+#big_note {
+  width: 95vw;
+}
+.note_content textarea {
+  padding-left: 15px;
+  font-size: 14px;
+}
+.note_title input {
+  font-size: 19px;
+  font-weight: bold;
+}
+#close{
+  width: 30%;
 }
 }
 
 @media only screen and (max-width: 425px) {
+  #close{
+    width: 30%;
+  }
   #create_note{
     width: 250px;
     max-width: 250px;
@@ -162,5 +242,24 @@
 }
 .n_content{
   padding-left: 10px; 
+  font-size: 1.32vw;
+}
+.search{
+  border: 1px solid #FFFFFE;
+}
+.note_title h1 {
+  font-size: 2.5vw;
+}
+
+#big_note {
+  width: 95vw;
+}
+.note_content textarea {
+  padding-left: 15px;
+  font-size: 14px;
+}
+.note_title input {
+  font-size: 19px;
+  font-weight: bold;
 }
 }
