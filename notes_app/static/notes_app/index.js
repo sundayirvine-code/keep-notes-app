@@ -211,7 +211,7 @@ function save(note_id=null,note_title,content_){
         let first_note_div = create_div.nextElementSibling;
         if(first_note_div != null){
           let parent_div = first_note_div.parentNode;
-          //console.log(parent_div, first_note_div, new_node)
+          console.log('parent',parent_div, 'first note',first_note_div, 'new node',new_node)
           parent_div.insertBefore(new_node,first_note_div);
           console.log('im not the first note')
           
