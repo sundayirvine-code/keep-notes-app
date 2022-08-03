@@ -70,7 +70,7 @@ function all_note_data(id,element){
     last.lastElementChild.firstElementChild.nextElementSibling.nextElementSibling.style.display="none";//
     last.lastElementChild.lastElementChild.style.display="block";
     last.lastElementChild.lastElementChild.className="close"
-    element.lastElementChild.remove()
+    //element.lastElementChild.remove()
     //last.lastElementChild.lastElementChild.style.cursor="pointer";
     //make the section bigger
     element.setAttribute('id',"big_note");
@@ -213,9 +213,11 @@ function save(note_id=null,note_title,content_){
           let parent_div = first_note_div.parentNode;
           console.log(parent_div, first_note_div, new_node)
           parent_div.insertBefore(new_node,first_note_div);
+          attach_label()
         }
         else{
           document.querySelector('#notes_bar').append(new_node);
+          attach_label()
         }
 
     });
@@ -474,6 +476,10 @@ function note_builder(notes_object, key,arc = false, del = false, new_note = nul
     del.innerHTML = 'DELETE'
     var edit = document.createElement('span');
     edit.innerHTML = 'EDIT'
+    var l = document.createElement('span');
+    l.innerHTML = 'LABELS'
+    l.id = "attach_label"
+    
     var archive = document.createElement('span');
     archive.id='archive'
     archive.innerHTML = 'ARCHIVE'
@@ -482,7 +488,7 @@ function note_builder(notes_object, key,arc = false, del = false, new_note = nul
     close.innerHTML = 'CLOSE'
     meta_right.append(archive);
     meta_right.append(del);
-    meta_right.append(edit);
+    meta_right.append(l);
     meta_right.append(close);
   }
   if(arc == true && del == false){
@@ -501,6 +507,8 @@ function note_builder(notes_object, key,arc = false, del = false, new_note = nul
     meta_right.append(del);
     meta_right.append(edit);
     meta_right.append(close);
+    var note_labels = notes_object[key]['labels'];
+
   }
   if(del == true){
     var restore = document.createElement('span');
@@ -525,8 +533,10 @@ function note_builder(notes_object, key,arc = false, del = false, new_note = nul
   });
   meta_info.append(meta_left);
   meta_info.append(meta_right);
+  
   if(new_note == null){
     notes_bar.append(note);
+    attach_label()
   }
   if(new_note == 1){
     return note;
@@ -738,81 +748,86 @@ function click_delete_icon(){
   })
 }
 
-document.addEventListener("DOMContentLoaded", function(){
-    //a click event on each note labels button
-    document.querySelectorAll('#attach_label').forEach(btn =>{
-      btn.onclick = ()=>{
-        console.log('give me a list of all labels')
-      document.querySelectorAll('#paste_labels').forEach(s=>{
-          if( s != null){
-            //close all open selects
-            s.remove()
+//ATTACH LABEL FUNCTION
+function attach_label(){
+      //a click event on each note labels button
+      document.querySelectorAll('#attach_label').forEach(btn =>{
+        btn.onclick = ()=>{
+          console.log('give me a list of all labels')
+        document.querySelectorAll('#paste_labels').forEach(s=>{
+            if( s != null){
+              //close all open selects
+              s.remove()
+    
+            }
+          })
+          
+          //ask the server for all the labels
+          fetch(`/all_labels`, {
+          })
+        .then(response => response.json())
+        .then(result => { 
+          console.log(result)
+          let paste_labels = document.createElement('div');
+          paste_labels.id ="paste_labels"
+          let select = document.createElement('select');
+          select.setAttribute('name', 'labels')
+          select.setAttribute('id', 'all_user_labels')
+          let disabled_option = document.createElement('option')
+          disabled_option.setAttribute('selected','true')
+          disabled_option.setAttribute('disabled','disabled')
+          
+          disabled_option.innerHTML='Choose A Label'
+          select.append(disabled_option)
+          let parent_note = btn.parentElement.parentElement.parentElement;
+          let note_id = parent_note.id
+          for(let x of result.labels ){
+          console.log(x)
+          //get the section to append the labels
+          let option = document.createElement('option')
+          option.setAttribute('value', x)
+          option.innerHTML=x
+          select.append(option)
+          }
+          paste_labels.append(select)
+          parent_note.append(paste_labels)
   
+          //onChange Event
+          document.querySelector('#all_user_labels').onchange=function(){
+            let x = document.querySelector('#all_user_labels').value;
+            //go to the server
+            fetch(`/attach_label/${x}`, {
+              method: 'POST',
+              headers:{
+                'Accept':'application/json',
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken')
+              },
+                body: JSON.stringify({
+                  note_id:note_id ,
+                  csrfmiddlewaretoken:'{{csrf_token}}'
+              })
+              })
+            .then(response => response.json())
+            .then(result => { 
+              console.log(result.labels)
+              //appedn label to the note
+              let meta_left = parent_note.firstElementChild.nextElementSibling.nextElementSibling.firstElementChild
+              let span = document.createElement('span')
+              span.innerHTML = result.labels
+              meta_left.append(span)
+            })
           }
         })
-        
-        //ask the server for all the labels
-        fetch(`/all_labels`, {
-        })
-      .then(response => response.json())
-      .then(result => { 
-        console.log(result)
-        let paste_labels = document.createElement('div');
-        paste_labels.id ="paste_labels"
-        let select = document.createElement('select');
-        select.setAttribute('name', 'labels')
-        select.setAttribute('id', 'all_user_labels')
-        let disabled_option = document.createElement('option')
-        disabled_option.setAttribute('selected','true')
-        disabled_option.setAttribute('disabled','disabled')
-        
-        disabled_option.innerHTML='Choose A Label'
-        select.append(disabled_option)
-        let parent_note = btn.parentElement.parentElement.parentElement;
-        let note_id = parent_note.id
-        for(let x of result.labels ){
-        console.log(x)
-        //get the section to append the labels
-        let option = document.createElement('option')
-        option.setAttribute('value', x)
-        option.innerHTML=x
-        select.append(option)
+  
         }
-        paste_labels.append(select)
-        parent_note.append(paste_labels)
-
-        //onChange Event
-        document.querySelector('#all_user_labels').onchange=function(){
-          let x = document.querySelector('#all_user_labels').value;
-          //go to the server
-          fetch(`/attach_label/${x}`, {
-            method: 'POST',
-            headers:{
-              'Accept':'application/json',
-              'Content-Type': 'application/json',
-              'X-CSRFToken': getCookie('csrftoken')
-            },
-              body: JSON.stringify({
-                note_id:note_id ,
-                csrfmiddlewaretoken:'{{csrf_token}}'
-            })
-            })
-          .then(response => response.json())
-          .then(result => { 
-            console.log(result.labels)
-            //appedn label to the note
-            let meta_left = parent_note.firstElementChild.nextElementSibling.nextElementSibling.firstElementChild
-            let span = document.createElement('span')
-            span.innerHTML = result.labels
-            meta_left.append(span)
-          })
-        }
+     
+  
       })
-
-      }
-   
-
-    })
+}
+document.addEventListener("DOMContentLoaded", function(){
+    //FUNCTION THAT ATTACHES LABELS
+    attach_label();
     // add a click event on the header section & the notes that have the class note
     document.querySelector('#header').onclick = function(){
       

@@ -25,7 +25,7 @@
             <input type="text" placeholder="Search..." required class="search">
             {% if user.is_authenticated %}
             <span style="float:right;">
-                <span id="current_user" style="margin-right: 5px;">Welcome {{user.username}}!</span>
+                
                 <a href="{% url 'logout' %}" class="nav-link text-white"style="color: #FFFFFE; text-decoration: none;">Logout</a>
             </span>
             {% endif %}
@@ -85,13 +85,13 @@
                     <pre class="n_content">{{ values.content|wordwrap:85}}...</pre>
                 </div>
                 <div class="meta_info">
-                    {% if values.LABELS %}
+                    
                     <div class="meta_left">
                         {% for value in values.LABELS%}
                         <span>{{ value}}</span>
                         {% endfor %}
                     </div>
-                    {% endif%}
+       
                     
                     <div class="meta_right">
                         <span id = "archive">ARCHIVE</span>
