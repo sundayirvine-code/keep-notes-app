@@ -60,7 +60,7 @@ function all_note_data(id,element){
     var last = element.firstElementChild.nextElementSibling.nextElementSibling;//meta
     last.lastElementChild.style.cursor="pointer"
     var second_last = element.firstElementChild.nextElementSibling;
-    last.style.height="10%";
+    last.style.height="20%";
     last.style.border="1px solid rgba(255, 255, 255, 0.4)";
     last.style.borderTop="";
     last.style.borderRadius="5px";
@@ -192,7 +192,7 @@ function save(note_id=null,note_title,content_){
   //capture the result from the server and convert it to a JSON format
   .then(response => response.json())
   .then(result => { 
-    console.log(result)
+    //console.log(result)
     //WHEN A NEW NOTE IS CREATED:
     if(result['message'] == 'New note created.'){
       document.querySelector('#create_note_title').border="none"
@@ -211,13 +211,14 @@ function save(note_id=null,note_title,content_){
         let first_note_div = create_div.nextElementSibling;
         if(first_note_div != null){
           let parent_div = first_note_div.parentNode;
-          console.log(parent_div, first_note_div, new_node)
+          //console.log(parent_div, first_note_div, new_node)
           parent_div.insertBefore(new_node,first_note_div);
-          attach_label()
+          console.log('im not the first note')
+          
         }
-        else{
+        if(first_note_div -= null){
           document.querySelector('#notes_bar').append(new_node);
-          attach_label()
+          console.log('im the first note')
         }
 
     });
@@ -228,7 +229,8 @@ function save(note_id=null,note_title,content_){
         click_delete()
         click_unarchive()
         click_note()
-        close()    
+        close() 
+        attach_label()   
     }
 
     
@@ -248,9 +250,11 @@ function save_big_note(){
 }
 //FUNCTION THAT ADDS A CLICK EVENT ON THE CLOSE BUTTON
 function close(){
+  
   document.querySelectorAll('#close').forEach(close_button =>{
     var par = close_button.parentElement;
       par.onclick=function(){
+        if(document.querySelector('#paste_labels') != null){document.querySelector('#paste_labels').remove()}
         if( close_button.getAttribute('class') == 'close'){
           close_button.click()
             save_big_note();
@@ -265,12 +269,14 @@ function close(){
 
 // FUNCTION THAT ADDS A CLICK EVENT TO THE ENTIRE NOTE
 function click_note(){
+  
       input_button_disappear()
       document.querySelectorAll(".note").forEach(note =>{
         //add a click event on each note content
         var elem = note.firstElementChild.nextElementSibling;
 
         var handler = function(){
+          if(document.querySelector('#paste_labels') != null){document.querySelector('#paste_labels').remove()}
           //shrink any open note
           if(document.querySelector('#big_note') != note && document.querySelector('#big_note') != null){
             //SHRINK THE NOTE
@@ -536,7 +542,6 @@ function note_builder(notes_object, key,arc = false, del = false, new_note = nul
   
   if(new_note == null){
     notes_bar.append(note);
-    attach_label()
   }
   if(new_note == 1){
     return note;
@@ -767,7 +772,7 @@ function attach_label(){
           })
         .then(response => response.json())
         .then(result => { 
-          console.log(result)
+          //console.log(result)
           let paste_labels = document.createElement('div');
           paste_labels.id ="paste_labels"
           let select = document.createElement('select');
@@ -782,7 +787,7 @@ function attach_label(){
           let parent_note = btn.parentElement.parentElement.parentElement;
           let note_id = parent_note.id
           for(let x of result.labels ){
-          console.log(x)
+          //console.log(x)
           //get the section to append the labels
           let option = document.createElement('option')
           option.setAttribute('value', x)
@@ -816,6 +821,13 @@ function attach_label(){
               let span = document.createElement('span')
               span.innerHTML = result.labels
               meta_left.append(span)
+              document.querySelectorAll('#paste_labels').forEach(s=>{
+                if( s != null){
+                  //close all open selects
+                  s.remove()
+        
+                }
+              })
             })
           }
         })
