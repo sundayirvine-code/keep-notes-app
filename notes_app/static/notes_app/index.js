@@ -57,19 +57,20 @@ function all_note_data(id,element){
   .then(response => response.json())
   .then(result => { 
     //terget the content section and append result
-    var last = element.lastElementChild;
+    var last = element.firstElementChild.nextElementSibling.nextElementSibling;//meta
     last.lastElementChild.style.cursor="pointer"
-    var second_last = last.previousElementSibling;
+    var second_last = element.firstElementChild.nextElementSibling;
     last.style.height="10%";
     last.style.border="1px solid rgba(255, 255, 255, 0.4)";
     last.style.borderTop="";
     last.style.borderRadius="5px";
     //make the metadata disappear
-    last.lastElementChild.firstElementChild.style.display="none";
-    last.lastElementChild.firstElementChild.nextElementSibling.style.display="none";
-    last.lastElementChild.firstElementChild.nextElementSibling.nextElementSibling.style.display="none";
+    last.lastElementChild.firstElementChild.style.display="none";//archive btn
+    last.lastElementChild.firstElementChild.nextElementSibling.style.display="none";//delete btn
+    last.lastElementChild.firstElementChild.nextElementSibling.nextElementSibling.style.display="none";//
     last.lastElementChild.lastElementChild.style.display="block";
     last.lastElementChild.lastElementChild.className="close"
+    element.lastElementChild.remove()
     //last.lastElementChild.lastElementChild.style.cursor="pointer";
     //make the section bigger
     element.setAttribute('id',"big_note");
@@ -94,7 +95,8 @@ function all_note_data(id,element){
     textarea.style.height="95%";
     textarea.style.boxShadow='';
     //append the textarea
-    second_last.style.height="97%";
+    second_last.style.height="100%";
+    second_last.style.background="#161616";
     second_last.append(textarea);
 
   })
@@ -741,7 +743,7 @@ document.addEventListener("DOMContentLoaded", function(){
     document.querySelectorAll('#attach_label').forEach(btn =>{
       btn.onclick = ()=>{
         console.log('give me a list of all labels')
-        let sele = document.querySelectorAll('#paste_labels').forEach(s=>{
+      document.querySelectorAll('#paste_labels').forEach(s=>{
           if( s != null){
             //close all open selects
             s.remove()

@@ -418,5 +418,5 @@ def attach_label(request, label):
     note.labels.add(l)
     return JsonResponse(
         {
-        'labels': l.name
+        'labels': l.name.upper()
         }, status=201)
