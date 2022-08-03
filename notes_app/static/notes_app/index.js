@@ -797,6 +797,15 @@ document.addEventListener("DOMContentLoaded", function(){
                 csrfmiddlewaretoken:'{{csrf_token}}'
             })
             })
+          .then(response => response.json())
+          .then(result => { 
+            console.log(result.labels)
+            //appedn label to the note
+            let meta_left = parent_note.firstElementChild.nextElementSibling.nextElementSibling.firstElementChild
+            let span = document.createElement('span')
+            span.innerHTML = result.labels
+            meta_left.append(span)
+          })
         }
       })
 

@@ -25,6 +25,7 @@
             <input type="text" placeholder="Search..." required class="search">
             {% if user.is_authenticated %}
             <span style="float:right;">
+                <span id="current_user" style="margin-right: 5px;">Welcome {{user.username}}!</span>
                 <a href="{% url 'logout' %}" class="nav-link text-white"style="color: #FFFFFE; text-decoration: none;">Logout</a>
             </span>
             {% endif %}
