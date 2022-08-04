@@ -242,7 +242,7 @@ font-size: 18px;
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (max-width: 670px) {
   .label_link p ,.label_link2 p, #label_uo li p, .label_link_create p{
-    font-size: 7px;
+    font-size: 8.5px;
   }
   #create_note{
     width: 400px;
@@ -285,7 +285,7 @@ font-size: 18px;
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 550px) {
   .label_link p ,.label_link2 p, #label_uo li p, .label_link_create p{
-    font-size: 6.5px;
+    font-size: 8.5px;
   }
   #paste_labels{
     position: absolute;
@@ -342,7 +342,7 @@ font-size: 18px;
 
 @media only screen and (max-width: 425px) {
   .label_link p ,.label_link2 p, #label_uo li p, .label_link_create p{
-    font-size: 6.5px;
+    font-size: 8.5px;
   }
   #close{
     width: 30%;
@@ -422,8 +422,16 @@ font-size: 18px;
 .meta_right span {
   font-size: 9px;
 }
+.label_link p ,.label_link2 p, #label_uo li p, .label_link_create p{
+  font-size: 8.5px;
+}
+
 }
 @media only screen and (max-width: 320px) {
+  .label_link p ,.label_link2 p, #label_uo li p, .label_link_create p{
+    font-size: 8.5px;
+  }
+
   .note {
     max-height: 350px;
     height: 350px;
