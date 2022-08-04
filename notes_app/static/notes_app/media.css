@@ -4,15 +4,18 @@
   #create_note{
     width:700px;
     max-width: 700px;
+    height: fit-content;
+    padding: 0;
 }
 .note{
-    max-height: 600px;
-    height: 600px; 
-    width:1100px;
-    max-width: 1100px;
+  max-height: 700px;
+  height: 700px;
+  width: 1000px;
+  max-width: 1000px;
 }
-.n_content{
-  padding-left:10px;  
+.n_content{ 
+  width: 100%;
+  font-size: 25px;
 }
 
 }
@@ -21,16 +24,18 @@
     #create_note{
     width:700px;
     max-width: 700px;
+    height: fit-content;
+    padding: 0;
 }
 .note{
-    max-height: 500px;
-    height: 500px; 
-    width:1000px;
-    max-width: 1000px;
+  max-height: 700px;
+  height: 700px;
+  width: 1000px;
+  max-width: 1000px;
 }
-.n_content{
-  padding:10px;  
-  width: 90%;
+.n_content{ 
+  width: 100%;
+  font-size: 25px;
 }
 }
 
@@ -41,6 +46,8 @@
   #create_note{
     width:650px;
     max-width: 650px;
+    height: fit-content;
+    padding: 0;
 }
 .note{
     max-height: 450px;
@@ -49,9 +56,11 @@
     max-width: 830px;
 }
 .n_content{
-  padding-left:10px;
-  font-size: 1.2vw;
+  font-size: 20px;
   
+}
+.note_title h1 {
+  font-size: 28px;
 }
 .meta_info{
   height: 15%;
@@ -64,6 +73,8 @@
   #create_note{
     width:650px;
     max-width: 650px;
+    height: fit-content;
+    padding: 0;
 }
 .note{
     max-height: 450px;
@@ -72,8 +83,7 @@
     max-width: 750px;
 }
 .n_content{
-  padding-left: 10px;
-  font-size: 1.2vw;
+  font-size: 20px;
   
 }
 .meta_info{
@@ -86,10 +96,12 @@
   #create_note{
     width: 500px;
     max-width: 500px;
+    height: fit-content;
+    padding: 0;
 }
 .note{
-    max-height: 400px;
-    height: 400px; /* of the notes_bar height*/
+    max-height: 500px;
+    height: 500px; /* of the notes_bar height*/
     width:650px;
     max-width: 650px;
 }
@@ -105,8 +117,14 @@
   width: 30%;
 }
 .n_content{
-  padding-left: 10px; 
-  font-size: 1.25vw;
+padding: 0;
+  font-size: 20px;
+}
+#create_note_title {
+ font-size: 18px;
+}
+#create_note_content {
+  font-size: 15px;
 }
 }
 
@@ -120,24 +138,34 @@
     width: 100%;
   }
   #create_note{
-    width: 450px;
-    max-width: 450px;
+    width: 550px;
+    max-width: 550px;
+    height: fit-content;
+    padding: 0;
 }
 .note{
-    max-height: 350px;
-    height: 350px; /* of the notes_bar height*/
-    width:550px;
-    max-width: 550px;
+  max-height: 500px;
+  height: 500px;
+  width: 750px;
+  max-width: 750px;
 }
-.n_content{
-  padding-left: 10px; 
-  font-size: 1.25vw;
+#create_note_title {
+font-size: 18px;
+}
+#create_note_content {
+  font-size: 14px;
+}
+.meta_left span, .meta_right span {
+  font-size: 12px;
+}
+.n_content{ 
+  font-size: 20px;
 }
 .search{
   border: 1px solid #FFFFFE;
 }
 .note_title h1 {
-  font-size: 2.5vw;
+  font-size: 30px;
 }
 
 #big_note {
@@ -161,15 +189,17 @@
   #create_note{
     width: 400px;
     max-width: 400px;
+    height: fit-content;
+    padding: 0;
 }
 .note{
-    max-height: 300px;
-    height: 300px; /* of the notes_bar height*/
-    width:450px;
-    max-width: 450px;
+  max-height: 500px;
+  height: 500px;
+  width: 650px;
+  max-width: 650px;
 }
 .note_title h1 {
-  font-size: 2.5vw;
+  font-size: 25px;
 }
 #big_note {
   width: 95vw;
@@ -190,25 +220,31 @@
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 550px) {
+  .meta_info {
+    height: 27%;
+    padding: 0px;
+    margin:0;
+}
   #create_note{
-    width: 250px;
-    max-width: 250px;
+    width: 350px;
+    max-width: 350px;
+    height: fit-content;
+    padding: 0;
 }
 .note{
-    max-height: 300px;
-    height: 250px; /* of the notes_bar height*/
-    width:350px;
-    max-width: 350px;
+  max-height: 550px;
+  height: 550px;
+  width: 500px;
+  max-width: 500px;
 }
 .n_content{
-  padding-left: 10px; 
-  font-size: 1.2vw;
+  font-size: 18px;
 }
 .search{
   border: 1px solid #FFFFFE;
 }
 .note_title h1 {
-  font-size: 2.5vw;
+  font-size: 28px;
 }
 #big_note {
   width: 95vw;
@@ -224,6 +260,12 @@
 #close{
   width: 30%;
 }
+#create_note_title {
+font-size: 18px;
+}
+#create_note_content {
+  font-size: 14px;
+}
 }
 
 @media only screen and (max-width: 425px) {
@@ -231,24 +273,34 @@
     width: 30%;
   }
   #create_note{
-    width: 250px;
-    max-width: 250px;
+    width: 320px;
+    max-width: 320px;
+    height: fit-content;
+    padding: 0;
 }
 .note{
-    max-height: 200px;
-    height: 200px; /* of the notes_bar height*/
-    width:300px;
-    max-width: 300px;
+  max-height: 350px;
+  height: 350px;
+  width: 400px;
+  max-width: 400px;
+}
+.meta_right span {
+  font-size: 9px;
+}
+.meta_left span{
+  font-size: 9px;
 }
 .n_content{
-  padding-left: 10px; 
-  font-size: 1.32vw;
+  padding: 0px;
+  width: 100%;
+  font-size: 15px;
+  word-break: break-word;
 }
 .search{
   border: 1px solid #FFFFFE;
 }
 .note_title h1 {
-  font-size: 2.5vw;
+  font-size: 20px;
 }
 
 #big_note {
@@ -261,5 +313,40 @@
 .note_title input {
   font-size: 19px;
   font-weight: bold;
+}
+}
+
+@media only screen and (max-width: 375px) {
+  .note {
+    max-height: 300px;
+    height: 300px;
+    width: 350px;
+    max-width: 350px;
+}
+.meta_right span {
+  font-size: 5px;
+}
+}
+@media only screen and (max-width: 320px) {
+  .note {
+    max-height: 300px;
+    height: 300px;
+    width: 300px;
+    max-width: 300px;
+}
+.meta_right span, .meta_left span {
+  font-size: 8px;
+}
+#create_note {
+  width: 250px;
+  max-width: 250px;
+  height: fit-content;
+  padding: 0;
+}
+#create_note_title {
+  font-size: 15px;
+}
+#create_note_content {
+  font-size: 14px;
 }
 }

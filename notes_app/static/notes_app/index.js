@@ -145,7 +145,7 @@ function shrink(){
   var cont = text2.firstElementChild.value;
   text2.firstElementChild.remove();
   // create pre element
-  var pre = document.createElement("pre");
+  var pre = document.createElement("p");
   pre.className="n_content";
 
   let new_line_count=0
@@ -452,7 +452,7 @@ function note_builder(notes_object, key,arc = false, del = false, new_note = nul
   //holds the content
   var notecontent = document.createElement('div');
   notecontent.className = 'note_content';
-  var note_para = document.createElement('pre');
+  var note_para = document.createElement('p');
   note_para.className = 'n_content';
   // load the first data first
   note_para.innerHTML = first + `...`;
