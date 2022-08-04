@@ -10,6 +10,7 @@
     <link href="{% static 'notes_app/index.css' %}" rel="stylesheet">
     <link href="{% static 'notes_app/media.css' %}" rel="stylesheet">
     <script src="{% static 'notes_app/index.js' %}"></script>
+    <script src="{% static 'notes_app/hamburger.js' %}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel|Fauna+One">
     <style>
@@ -23,14 +24,17 @@
     </style>
 </head>
 <body id="body">
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div> 
     <div id="header">
         <div id="label_logo">
             <span id="label_name"style="text-align:center;">KEEP-MY-NOTES</span> 
-            <!--<span id="logo">
-                <img src="{% static 'notes_app/images/logo.avif' %}" alt="keep notes logo" style="width: 80px; height:50px;">
-            </span> -->           
+                    
         </div>
-
+        
         <div id="search">
             <input type="text" placeholder="Search..." required class="search">
             {% if user.is_authenticated %}
@@ -43,14 +47,14 @@
 
     </div>
 
-    <div id="labels_bar">
-        <div class="label_link2">
+    <div id="labels_bar" class="labels_bar">
+        <div class="label_link2" style="border-bottom:1px solid #FDE24F;">
             <p>
-            <a href="{% url 'index' %}">NOTES</a>
+            <a class ="nav-link" href="{% url 'index' %}">NOTES</a>
             </p>
             
         </div>
-        <div id="label_container" style="border-top:1px solid #FDE24F;">
+        <div id="label_container" >
             <br>
             <div class="label_link_create" >
                 <p class="l_name " id="create_label">CREATE LABEL</p>
@@ -60,7 +64,7 @@
     
             {% for label in labels %}
             <div class="label_link" id="{{label.id}}">
-                <p style = "display: inline;" class="l_name" id="{{label.id}}">{{ label.name  | upper }}</p>
+                <p style = "display: inline;" class="l_name nav-link" id="{{label.id}}">{{ label.name  | upper }}</p>
                 <span class="label_icons label_icons_save " style="display: none;">SAVE</span>
                 <span class="label_icons label_icons_delete ">DELETE</span>
                 <span class="label_icons label_icons_edit">EDIT</span>
@@ -71,15 +75,15 @@
         <div style="border-top:1px solid #FDE24F; margin-bottom: 20px;">
             <br>
             <ul id="label_uo">
-                <li class="label_link"><p id = "archive_link">ARCHIVE</p></li>
-                <li class="label_link"><p id="delete_link">DELETE</p></li>
-                <li class="label_link"><p id="settings_link">SETTINGS</p></li>
+                <li class="label_link nav-link"><p id = "archive_link">ARCHIVE</p></li>
+                <li class="label_link nav-link"><p id="delete_link">DELETE</p></li>
+                <li class="label_link nav-link"><p id="settings_link">SETTINGS</p></li>
             </ul>
         </div>
         <br>
     </div>
 
-    <div id="notes_bar">
+    <div id="notes_bar" class="notes_bar">
 
             <div id="create_note">
                     <input type="text" name="title" id="create_note_title" placeholder="TITLE" maxlength="250">

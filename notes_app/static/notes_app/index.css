@@ -73,13 +73,12 @@ h1 {
     opacity: 1;
 }
 
-#labels_bar{ 
+.labels_bar{ 
     width: 25%;
     height: 90%;
     float: left;
     padding: 5px;
     position: fixed;
-    left: 0;
     overflow-y: auto;
     margin-top: 15vh;
 
@@ -87,7 +86,7 @@ h1 {
 
 
 /*NOTES BAR SECTION */
-#notes_bar{
+.notes_bar{
     width: 70%;
     height: 85%;/* of the body*/
     float: right;
@@ -199,7 +198,18 @@ h1 {
     color: #FFFFFE;  
 
 }
-
+.hamburger {
+    display: none;
+}
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    
+}
 .meta_right{
     width: 50%;
     height: 100%;
@@ -211,9 +221,11 @@ select{
     font-family: Arial;
     background-color: #16161a;
     color: #FFFFFE;
+    
   }
 option{
 font-size: 10px;
+
 }
 #close{
     display: none;
