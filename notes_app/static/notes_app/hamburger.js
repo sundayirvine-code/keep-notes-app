@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
     navLink.forEach(n => n.addEventListener("click", closeMenu));
 
     function mobileMenu() {
-        //navLink.forEach(n => n.classList.toggle("text-white"));
         hamburger.classList.toggle("active");
         labels_bar.classList.toggle("labels_bar_2");
     }
