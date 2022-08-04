@@ -216,7 +216,7 @@ function save(note_id=null,note_title,content_){
           console.log('im not the first note')
           
         }
-        if(first_note_div -= null){
+        if(first_note_div == null){
           document.querySelector('#notes_bar').append(new_node);
           console.log('im the first note')
         }
