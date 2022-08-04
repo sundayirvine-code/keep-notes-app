@@ -207,7 +207,14 @@ h1 {
     padding-left: 25px;
 
 }
-
+select{
+    font-family: Arial;
+    background-color: #16161a;
+    color: #FFFFFE;
+  }
+option{
+font-size: 10px;
+}
 #close{
     display: none;
 }

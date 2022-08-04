@@ -93,6 +93,11 @@
 }
 }
 @media  (max-width: 1100px) {
+  #paste_labels{
+    position: absolute;
+    right: 19px;
+    bottom: 126px;
+  }
   #create_note{
     width: 500px;
     max-width: 500px;
@@ -131,6 +136,11 @@ padding: 0;
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 880px) {
+  #paste_labels{
+    position: absolute;
+    right: 19px;
+    bottom: 126px;
+  }
   #labels_bar{
     display: none;
   }
@@ -215,11 +225,22 @@ font-size: 18px;
 #close{
   width: 30%;
 }
+#paste_labels{
+  position: absolute;
+  right: 19px;
+  bottom: 126px;
+}
+
 
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 550px) {
+  #paste_labels{
+    position: absolute;
+    right: 19px;
+    bottom: 139px;
+  }
   .meta_info {
     height: 27%;
     padding: 0px;
@@ -290,10 +311,13 @@ font-size: 18px;
 .meta_left span{
   font-size: 9px;
 }
+.meta_right span {
+  font-size: 9px;
+}
 .n_content{
   padding: 0px;
   width: 100%;
-  font-size: 15px;
+  font-size: 14px;
   word-break: break-word;
 }
 .search{
@@ -314,6 +338,12 @@ font-size: 18px;
   font-size: 19px;
   font-weight: bold;
 }
+#paste_labels{
+  position: absolute;
+  right: 19px;
+  bottom: 85px;
+}
+
 }
 
 @media only screen and (max-width: 375px) {
@@ -326,11 +356,23 @@ font-size: 18px;
 .meta_right span {
   font-size: 5px;
 }
+#paste_labels{
+  position: absolute;
+  right: 19px;
+  bottom: 73px;
+}
+
+.meta_left span{
+  font-size: 9px;
+}
+.meta_right span {
+  font-size: 9px;
+}
 }
 @media only screen and (max-width: 320px) {
   .note {
-    max-height: 300px;
-    height: 300px;
+    max-height: 350px;
+    height: 350px;
     width: 300px;
     max-width: 300px;
 }
@@ -349,4 +391,11 @@ font-size: 18px;
 #create_note_content {
   font-size: 14px;
 }
+#paste_labels{
+  position: absolute;
+  right: 19px;
+  bottom: 85px;
+}
+
+
 }
