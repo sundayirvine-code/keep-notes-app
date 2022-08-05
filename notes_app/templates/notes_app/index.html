@@ -77,9 +77,9 @@
         <div style="border-top:1px solid #FDE24F; margin-bottom: 20px;">
             <br>
             <ul id="label_uo">
-                <li class="label_link nav-link"><p id = "archive_link">ARCHIVE</p></li>
-                <li class="label_link nav-link"><p id="delete_link">DELETE</p></li>
-                <li class="label_link nav-link"><p id="settings_link">SETTINGS</p></li>
+                <li class="label_link"><p class="nav-link" id = "archive_link">ARCHIVED</p></li>
+                <li class="label_link"><p class="nav-link" id="delete_link">DELETED</p></li>
+                <li class="label_link"><p class="nav-link" id="settings_link">SETTINGS</p></li>
             </ul>
         </div>
         <br>
@@ -110,9 +110,15 @@
        
                     
                     <div class="meta_right">
-                        <span id = "archive">ARCHIVE</span>
-                        <span id ="delete">DELETE</span>
-                        <span id ="attach_label" >LABELS</span>
+                        <div style="display: inline-block;" id = "archive" class="fa fa-archive tooltip" aria-hidden="true">
+                            <span class="tooltiptext">Archive Note</span>
+                        </div>
+                        <div style="display: inline-block;"id ="delete" class="fa fa-trash tooltip" aria-hidden="true">
+                            <span class="tooltiptext">Delete</span>
+                        </div>
+                        <div style="display: inline-block;" id ="attach_label" class="fa fa-tags tooltip" aria-hidden="true">
+                            <span class="tooltiptext">Add Tag</span>
+                        </div>
                         <span style="display: none;" id="close">CLOSE</span>
                     </div>
                     

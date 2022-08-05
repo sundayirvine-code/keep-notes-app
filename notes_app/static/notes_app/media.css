@@ -138,7 +138,7 @@ padding: 0;
 @media only screen and (max-width: 880px) {
   .label_icons_show {
     display:inline-block;
-    font-size: 9px;
+    font-size: 12px;
 }
 .label_icons_edit {
   right: 15%;
@@ -253,7 +253,7 @@ font-size: 18px;
   font-weight: bold;
 }
 #close{
-  width: 30%;
+  width: 100%;
 }
 }
 
@@ -303,6 +303,11 @@ font-size: 18px;
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 550px) {
+  #attach_label, #delete, #archive {
+    padding-right: 3px;
+    font-size: 15px;
+    padding-top: 3px;
+}
   .label_link p ,.label_link2 p, #label_uo li p, .label_link_create p{
     font-size: 8.5px;
   }

@@ -211,7 +211,7 @@ h1 {
     
 }
 .meta_right{
-    width: 50%;
+    width: 20%;
     height: 100%;
     float: right;
     padding-left: 25px;
@@ -230,13 +230,51 @@ font-size: 10px;
 #close{
     display: none;
 }
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #FDE24F;
+    color: #16161A;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 150%;
+    left: 50%;
+    margin-left: -60px;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
 
 .meta_left{
-    width: 50%;
+    width: 79%;
     height: 100%;
     float: left;
 }
-
+#attach_label, #delete, #archive{
+    padding-right: 10px;
+    font-size: 18px;
+}
 .meta_left span, .meta_right span{
     cursor: pointer;
     font-size: 1vw;
