@@ -306,6 +306,7 @@ font-size: 10px;
 }
 .label_icons{
     display: none;
+    font-size: 12px;
 }
 .label_icons_delete{
     right: 6%;
