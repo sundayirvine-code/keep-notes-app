@@ -138,7 +138,7 @@ padding: 0;
 @media only screen and (max-width: 880px) {
   .label_icons_show {
     display:inline-block;
-    font-size: 12px;
+    font-size: 16px;
 }
 .label_icons_edit {
   right: 15%;
@@ -229,16 +229,20 @@ font-size: 18px;
   font-size: 14px;
 }
 .meta_left span, .meta_right span {
-  font-size: 12px;
+  font-size: 11px;
 }
 .n_content{ 
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.25rem;
 }
 .search{
   border: 1px solid #FFFFFE;
 }
 .note_title h1 {
-  font-size: 30px;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.5rem;
 }
 
 #big_note {
@@ -251,6 +255,7 @@ font-size: 18px;
 .note_title input {
   font-size: 19px;
   font-weight: bold;
+  padding-left: 15px;
 }
 #close{
   width: 100%;
