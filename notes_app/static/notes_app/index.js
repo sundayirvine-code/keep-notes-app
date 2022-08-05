@@ -404,6 +404,7 @@ function remove_add_notes_bar(){
   //create a new section to display notes & append it to the body tag
   var notes_bar = document.createElement('div');
   notes_bar.id="notes_bar";
+  notes_bar.className="notes_bar";
   var body = document.querySelector('body');
   body.append(notes_bar)
 }

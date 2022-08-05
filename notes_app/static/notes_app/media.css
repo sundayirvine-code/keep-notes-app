@@ -136,6 +136,24 @@ padding: 0;
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 880px) {
+  .label_icons_show {
+    display:inline-block;
+    font-size: 9px;
+}
+.label_icons_edit {
+  right: 15%;
+}
+.label_icons_save{
+  right: 2%;
+  color: #16161A;
+  background: #FDE24F;
+  height: 100%;
+  width: 40px;
+  border-radius: 50%;
+  padding-top: 15px;
+  padding-left: 8px;
+  font-size: 9px;
+}
   #paste_labels{
     position: absolute;
     right: 19px;
@@ -151,7 +169,7 @@ padding: 0;
     display: block;
     z-index: 1000;
     background-color:#16161A;
-    width: 40%;
+    width: 50%;
 
   }
   #notes_bar {
@@ -170,7 +188,7 @@ padding: 0;
     cursor: pointer;
     z-index: 10;
     position: absolute;
-    left: 25px;
+    left: 2px;
     top:20px;
     width: 50px;
 }
@@ -241,6 +259,7 @@ font-size: 18px;
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (max-width: 670px) {
+  .label_icons_save{right: 0%;}
   .label_link p ,.label_link2 p, #label_uo li p, .label_link_create p{
     font-size: 8.5px;
   }
@@ -341,6 +360,9 @@ font-size: 18px;
 }
 
 @media only screen and (max-width: 425px) {
+  .labels_bar_2 {
+    width: 70%;
+}
   .label_link p ,.label_link2 p, #label_uo li p, .label_link_create p{
     font-size: 8.5px;
   }
@@ -401,6 +423,9 @@ font-size: 18px;
 }
 
 @media only screen and (max-width: 375px) {
+  .labels_bar_2 {
+    width: 70%;
+}
   .note {
     max-height: 300px;
     height: 300px;
@@ -428,6 +453,9 @@ font-size: 18px;
 
 }
 @media only screen and (max-width: 320px) {
+  .labels_bar_2 {
+    width: 70%;
+}
   .label_link p ,.label_link2 p, #label_uo li p, .label_link_create p{
     font-size: 8.5px;
   }
@@ -448,7 +476,9 @@ font-size: 18px;
   padding: 0;
 }
 .label_link p ,.label_link2 p, #label_uo li p, .label_link_create p{
-  font-size: 6.5px;
+  font-size: 9.5px;
+  margin-left: 0;
+  padding-left: 10px;
 }
 #create_note_title {
   font-size: 15px;

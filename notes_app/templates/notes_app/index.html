@@ -13,6 +13,7 @@
     <script src="{% static 'notes_app/hamburger.js' %}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel|Fauna+One">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="icon" type="image/x-icon" href="{% static 'notes_app/images/favicon.ico' %}">
     <style>
     body {
@@ -67,8 +68,8 @@
             <div class="label_link" id="{{label.id}}">
                 <p style = "display: inline;" class="l_name nav-link" id="{{label.id}}">{{ label.name  | upper }}</p>
                 <span class="label_icons label_icons_save " style="display: none;">SAVE</span>
-                <span class="label_icons label_icons_delete ">DELETE</span>
-                <span class="label_icons label_icons_edit">EDIT</span>
+                <span class="label_icons label_icons_delete "><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+                <span class="label_icons label_icons_edit"><i class="fa fa-pencil" aria-hidden="true"></i></span>
             </div>
             {% endfor %}
             

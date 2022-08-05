@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector(".hamburger");
     const labels_bar = document.querySelector("#labels_bar");
     const navLink = document.querySelectorAll(".nav-link");
+    const label_icons = document.querySelectorAll('.label_icons')
 
     hamburger.addEventListener("click", mobileMenu);
     navLink.forEach(n => n.addEventListener("click", closeMenu));
@@ -10,6 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function mobileMenu() {
         hamburger.classList.toggle("active");
         labels_bar.classList.toggle("labels_bar_2");
+        label_icons.forEach(icon =>{
+            icon.classList.toggle("label_icons_show");
+        })
     }
 
     function closeMenu() {
