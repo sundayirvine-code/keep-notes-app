@@ -43,6 +43,7 @@
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media(max-width: 1400px) {
+
   #create_note{
     width:650px;
     max-width: 650px;
@@ -70,6 +71,9 @@
 }
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (max-width:1200px) {
+  .meta_right {
+    bottom: -45px;
+}
   #create_note{
     width:650px;
     max-width: 650px;
@@ -136,6 +140,9 @@ padding: 0;
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 880px) {
+  .meta_right {
+    bottom: -55px;
+}
   .label_icons_show {
     display:inline-block;
     font-size: 16px;
@@ -308,10 +315,13 @@ font-size: 18px;
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 550px) {
+  .meta_right {
+    bottom: -75px;
+}
   #attach_label, #delete, #archive {
-    padding-right: 3px;
     font-size: 15px;
     padding-top: 3px;
+    margin-right: 20px;
 }
   .label_link p ,.label_link2 p, #label_uo li p, .label_link_create p{
     font-size: 8.5px;
@@ -370,6 +380,9 @@ font-size: 18px;
 }
 
 @media only screen and (max-width: 425px) {
+  .meta_right {
+    bottom: -35px;
+}
   .labels_bar_2 {
     width: 70%;
 }
@@ -433,6 +446,9 @@ font-size: 18px;
 }
 
 @media only screen and (max-width: 375px) {
+  .meta_right {
+    bottom: -20px;
+}
   .labels_bar_2 {
     width: 70%;
 }
@@ -463,6 +479,9 @@ font-size: 18px;
 
 }
 @media only screen and (max-width: 320px) {
+  .meta_right {
+    bottom: -35px;
+}
   .labels_bar_2 {
     width: 70%;
 }
@@ -486,7 +505,7 @@ font-size: 18px;
   padding: 0;
 }
 .label_link p ,.label_link2 p, #label_uo li p, .label_link_create p{
-  font-size: 9.5px;
+  font-size: 16px;
   margin-left: 0;
   padding-left: 10px;
 }

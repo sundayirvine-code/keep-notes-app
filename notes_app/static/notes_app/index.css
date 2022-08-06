@@ -213,7 +213,7 @@ h1 {
 .meta_right{
     width: 100%;
     position: relative;
-    bottom: -30px;
+    bottom: -35px;
 }
 select{
     font-family: Arial;
@@ -270,8 +270,11 @@ font-size: 10px;
     float: left;
 }
 #attach_label, #delete, #archive{
-    padding-right: 10px;
     font-size: 18px;
+    margin-right: 40px;
+}
+#attach_label:hover, #delete:hover, #archive:hover{
+    background-color: #9aa0a628;
 }
 .meta_left span, .meta_right span{
     cursor: pointer;

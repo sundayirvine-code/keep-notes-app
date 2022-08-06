@@ -428,11 +428,7 @@ function note_builder(notes_object, key,arc = false, del = false, new_note = nul
   
   
   //extract the content
-  var note_content = notes_object[key]['content'];
-  // capture the first  180 sub strings and text wrap at character 82
-  //var first = note_content.substring(0,600);
-  
-  //first = first.replace(/(.{82})/g, "$1<br>");
+  var note_content = notes_object[key]['content']
 
   let new_line_count=0
   let conte=''
@@ -463,13 +459,6 @@ function note_builder(notes_object, key,arc = false, del = false, new_note = nul
   //holds meta information
   var meta_info = document.createElement('div');
   meta_info.className = "meta_info";
-  //var span = document.createElement('span');
-  //span.className = "span1";
-  //var pre = document.createElement('pre');
-  //var date_created = notes_object[key]['date_created'];
-  //span.innerHTML = date_created;
-  //span.append(pre);
-  //meta_info.append(span);
   note.append(meta_info);
 
   // 2. LABELS OF THIS NOTE
@@ -478,56 +467,74 @@ function note_builder(notes_object, key,arc = false, del = false, new_note = nul
   meta_left.className = "meta_left";
   meta_right.className = "meta_right";
   if(arc == false && del == false){
-    var del = document.createElement('span');
+    var del = document.createElement('div');
     del.id="delete"
-    del.innerHTML = 'DELETE'
-    var edit = document.createElement('span');
-    edit.innerHTML = 'EDIT'
-    var l = document.createElement('span');
-    l.innerHTML = 'LABELS'
-    l.id = "attach_label"
+    del.classList.add('fa','fa-trash','tooltip');
+    del.setAttribute('aria-hidden', 'true');
+    del.style.display="inline-block";
+    var del_span =document.createElement('span')
+    del_span.className='tooltiptext'
+    del_span.innerHTML='Delete'
+    del.append(del_span);
     
-    var archive = document.createElement('span');
+    var archive = document.createElement('div');
     archive.id='archive'
-    archive.innerHTML = 'ARCHIVE'
+    archive.classList.add('fa','fa-archive','tooltip');
+    archive.setAttribute('aria-hidden', 'true');
+    archive.style.display="inline-block";
+    var arch_span =document.createElement('span')
+    arch_span.className='tooltiptext'
+    arch_span.innerHTML='Archive'
+    archive.append(arch_span);
+
     var close = document.createElement('span');
     close.id="close"
     close.innerHTML = 'CLOSE'
+
     meta_right.append(archive);
     meta_right.append(del);
-    meta_right.append(l);
     meta_right.append(close);
   }
   if(arc == true && del == false){
-    var del = document.createElement('span');
+    var del = document.createElement('div');
     del.id="delete"
-    del.innerHTML = 'DELETE'
-    var edit = document.createElement('span');
-    edit.innerHTML = 'EDIT'
-    var unarchive = document.createElement('span');
-    unarchive.id='unarchive'
-    unarchive.innerHTML = 'UNARCHIVE'
+    del.classList.add('fa','fa-trash','tooltip');
+    del.setAttribute('aria-hidden', 'true');
+    del.style.display="inline-block";
+    var del_span =document.createElement('span')
+    del_span.className='tooltiptext'
+    del_span.innerHTML='Delete'
+    del.append(del_span);
+
+    var archive = document.createElement('div');
+    archive.id='archive'
+    archive.classList.add('fa','fa-archive','tooltip');
+    archive.setAttribute('aria-hidden', 'true');
+    archive.style.display="inline-block";
+    var arch_span =document.createElement('span')
+    arch_span.className='tooltiptext'
+    arch_span.innerHTML='Unarchive'
+    archive.append(arch_span);
+
     var close = document.createElement('span');
     close.id="close"
     close.innerHTML = 'CLOSE'
-    meta_right.append(unarchive);
+
+    meta_right.append(archive);
     meta_right.append(del);
-    meta_right.append(edit);
     meta_right.append(close);
-    var note_labels = notes_object[key]['labels'];
+
 
   }
   if(del == true){
     var restore = document.createElement('span');
     restore.id = 'restore'
     restore.innerHTML = 'RESTORE'
-    var edit = document.createElement('span');
-    edit.innerHTML = 'EDIT'
+
     var close = document.createElement('span');
     close.id="close";
     close.innerHTML = 'CLOSE';
     meta_right.append(restore);
-    meta_right.append(edit);
     meta_right.append(close);
   }
   var note_labels = notes_object[key]['labels'];
