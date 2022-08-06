@@ -266,15 +266,24 @@ font-size: 10px;
 
 .meta_left{
     width: 100%;
-    height: fit-content;
+
     float: left;
+}
+.fa-archive:before, .fa-trash:before, .fa-tags:before{
+    position: absolute;
+    left: 7.5px;
+    bottom: 7px;
 }
 #attach_label, #delete, #archive{
     font-size: 18px;
     margin-right: 40px;
+    width:35px;
+    height: 35px;
+    border-radius: 50%;
 }
 #attach_label:hover, #delete:hover, #archive:hover{
     background-color: #9aa0a628;
+    
 }
 .meta_left span, .meta_right span{
     cursor: pointer;
